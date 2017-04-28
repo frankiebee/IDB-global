@@ -1,0 +1,19 @@
+{
+  "name": "idb-global",
+  "version": "1.0.0",
+  "description": "A simple promise based module for interacting with IndexDb in the browser written using the `global` keyword for Browserify.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankiebee/IDB-global.git"
+  },
+  "author": "frankiebee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankiebee/IDB-global/issues"
+  },
+  "homepage": "https://github.com/frankiebee/IDB-global#readme"
+}
