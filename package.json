@@ -6,7 +6,8 @@
   "scripts": {
     "chrome": "cat test-bundle.js | tape-run --browser chrome",
     "firefox": "cat test-bundle.js | tape-run --browser firefox",
-    "test": "browserify test.js -o test-bundle.js &&  npm run chrome && npm run firefox"
+    "nodeTest": "rm test && node test.js",
+    "test": "npm run nodeTest && browserify test.js -o test-bundle.js &&  npm run chrome && npm run firefox"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "browserify": "^13.0.0",
     "tape": "^4.4.0"
   },
-  "homepage": "https://github.com/frankiebee/IDB-global#readme"
+  "homepage": "https://github.com/frankiebee/IDB-global#readme",
+  "dependencies": {
+    "obs-store": "^2.4.1"
+  }
 }
