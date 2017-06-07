@@ -14,4 +14,5 @@ builds/
 notes.txt
 app/.DS_Store
 test-bundle.js
+test
 .source.*.html
