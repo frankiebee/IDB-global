@@ -24,9 +24,15 @@ module.exports = class IndexDbController extends ObsStrore {
     return Promise.resolve(this.getState())
   }
 
-  put(data) {
+  put (data) {
     return this._write(data)
     .then(() => this.putState(data))
+  }
+
+  del (key) {
+    const newState = this.getState()
+    delete newState[key]
+    return this.put(newState)
   }
 
   _write (data) {

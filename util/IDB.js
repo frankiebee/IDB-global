@@ -4,7 +4,6 @@ module.exports = class IndexDbController extends ObsStrore {
 
   constructor (opts) {
     super()
-    if (!global.indexedDB) this._node = true
     global.IDBTransaction = global.IDBTransaction || global.webkitIDBTransaction || global.msIDBTransaction || {READ_WRITE: "readwrite"}; // This line should only be needed if it is needed to support the object's constants for older browsers
     global.IDBKeyRange = global.IDBKeyRange || global.webkitIDBKeyRange || global.msIDBKeyRange
     this.key = opts.key
@@ -27,8 +26,18 @@ module.exports = class IndexDbController extends ObsStrore {
   get () {
     return this._request('get', 'dataStore')
   }
+
   put (state) {
     return this._request('put', state, 'dataStore')
+  }
+
+  del (key) {
+    return this.get()
+    .then((state) => {
+      const newState = state
+      delete newState[key]
+      return this.put(newState)
+    })
   }
 
   _add (key = 'dataStore', objStore) {
