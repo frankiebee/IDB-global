@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/frankiebee/IDB-global#readme",
   "dependencies": {
-    "obs-store": "^2.4.1"
+    "obs-store": "^4.0.3"
   }
 }
